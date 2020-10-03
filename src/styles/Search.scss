@@ -1,0 +1,25 @@
+.search {
+  &__input {
+    display: flex;
+    align-items: center;
+    border: 0.1rem solid lightgray;
+    height: 3rem;
+    padding: 1rem 2rem;
+    border-radius: 50rem;
+    width: 75vw;
+    margin: 0 auto;
+    margin-top: 4rem;
+    max-width: 56rem;
+
+    & input {
+      flex: 1;
+      padding: 1rem 2rem;
+      font-size: medium;
+      border: none;
+
+      &:focus {
+        outline-width: 0;
+      }
+    }
+  }
+}

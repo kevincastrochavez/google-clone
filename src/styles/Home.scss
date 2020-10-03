@@ -31,4 +31,16 @@
       margin-right: 2rem;
     }
   }
+
+  &__body {
+    flex: 1;
+    display: flex;
+    margin-top: 10%;
+    flex-direction: column;
+
+    & img {
+      object-fit: contain;
+      height: 10rem;
+    }
+  }
 }
