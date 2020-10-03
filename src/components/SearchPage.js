@@ -4,6 +4,12 @@ import { useStateValue } from "../StateProvider";
 import Response from "../response";
 import { Link } from "react-router-dom";
 import Search from "./Search";
+import SearchIcon from "@material-ui/icons/Search";
+import DescriptionIcon from "@material-ui/icons/Description";
+import ImageIcon from "@material-ui/icons/Image";
+import LocalOfferIcon from "@material-ui/icons/LocalOffer";
+import RoomIcon from "@material-ui/icons/Room";
+import MoreVertIcon from "@material-ui/icons/MoreVert";
 
 function SearchPage() {
   const [{ term }, dispatch] = useStateValue();
@@ -25,6 +31,42 @@ function SearchPage() {
 
         <div className="searchPage__body">
           <Search hideButtons={true} />
+
+          <div className="searchPage__options">
+            <div className="searchPage__options-left">
+              <div className="searchPage__options-left-option">
+                <SearchIcon />
+                <Link to="/all">All</Link>
+              </div>
+
+              <div className="searchPage__options-left-option">
+                <DescriptionIcon />
+                <Link to="/news">News</Link>
+              </div>
+
+              <div className="searchPage__options-left-option">
+                <ImageIcon />
+                <Link to="/images">Images</Link>
+              </div>
+
+              <div className="searchPage__options-left-option">
+                <LocalOfferIcon />
+                <Link to="/shopping">Shopping</Link>
+              </div>
+
+              <div className="searchPage__options-left-option">
+                <RoomIcon />
+                <Link to="/maps">Maps</Link>
+              </div>
+
+              <div className="searchPage__options-left-option">
+                <MoreVertIcon />
+                <Link to="/more">More</Link>
+              </div>
+            </div>
+
+            <div className="searchPage__options-right"></div>
+          </div>
         </div>
       </div>
 
