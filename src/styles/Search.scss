@@ -22,4 +22,31 @@
       }
     }
   }
+
+  &__inputIcon {
+    color: gray;
+  }
+
+  &__buttons {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+
+    & button {
+      margin: 0.5rem;
+      padding: 0.7rem 1.5rem;
+      background-color: #f8f8f8;
+      border: 0.1rem solid white;
+      text-transform: inherit;
+      color: #5f6368;
+
+      &:hover {
+        box-shadow: 0 0.1rem 0.1rem rgba(0, 0, 0, 0.1);
+        background-image: -webkit-linear-gradient(top, #f8f8f8, #f1f1f1);
+        background-color: #f8f8f8;
+        border: 0.1rem solid #c6c6c6;
+        color: #222;
+      }
+    }
+  }
 }
