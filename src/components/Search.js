@@ -40,13 +40,8 @@ function Search({ hideButtons = false }) {
           <Button variant="outlined">Look</Button>
         </div>
       ) : (
-        <div className="search__buttons">
-          <Button
-            className="search__buttonsHidden"
-            type="submit"
-            onClick={search}
-            variant="outlined"
-          >
+        <div className="search__buttonsHidden">
+          <Button type="submit" onClick={search} variant="outlined">
             Search for Something
           </Button>
           <Button variant="outlined">Look</Button>
