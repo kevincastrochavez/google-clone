@@ -1,7 +1,6 @@
 import React from "react";
 import { useStateValue } from "../StateProvider";
-// import useGoogleSearch from "../useGoogleSearch";
-import Response from "../response";
+import useGoogleSearch from "../useGoogleSearch";
 import { Link } from "react-router-dom";
 import Search from "./Search";
 import SearchIcon from "@material-ui/icons/Search";
@@ -13,8 +12,7 @@ import MoreVertIcon from "@material-ui/icons/MoreVert";
 
 function SearchPage() {
   const [{ term }, dispatch] = useStateValue();
-  //   const { data } = useGoogleSearch(term);
-  const data = Response;
+  const { data } = useGoogleSearch(term);
 
   console.log(data);
 
@@ -35,32 +33,32 @@ function SearchPage() {
           <div className="searchPage__options">
             <div className="searchPage__options-left">
               <div className="searchPage__options-left-option">
-                <SearchIcon />
+                <SearchIcon className="item-icon" />
                 <Link to="/all">All</Link>
               </div>
 
               <div className="searchPage__options-left-option">
-                <DescriptionIcon />
+                <DescriptionIcon className="item-icon" />
                 <Link to="/news">News</Link>
               </div>
 
               <div className="searchPage__options-left-option">
-                <ImageIcon />
+                <ImageIcon className="item-icon" />
                 <Link to="/images">Images</Link>
               </div>
 
               <div className="searchPage__options-left-option">
-                <LocalOfferIcon />
+                <LocalOfferIcon className="item-icon" />
                 <Link to="/shopping">Shopping</Link>
               </div>
 
               <div className="searchPage__options-left-option">
-                <RoomIcon />
+                <RoomIcon className="item-icon" />
                 <Link to="/maps">Maps</Link>
               </div>
 
               <div className="searchPage__options-left-option">
-                <MoreVertIcon />
+                <MoreVertIcon className="item-icon" />
                 <Link to="/more">More</Link>
               </div>
             </div>
@@ -78,7 +76,41 @@ function SearchPage() {
         </div>
       </div>
 
-      <div className="searchPage__results"></div>
+      {term && (
+        <div className="searchPage__results">
+          <p className="searchPage__results-count">
+            About {data?.searchInformation.formattedTotalResults} results (
+            {data?.searchInformation.formattedSearchTime} seconds) for {term}
+          </p>
+
+          {data?.items.map((item) => (
+            <div className="searchPage__results-result">
+              <a href={item.link}>
+                {item.pagemap?.cse_image?.length > 0 && (
+                  <img
+                    className="searchPage__results-result-image"
+                    src={
+                      item.pagemap?.cse_image?.length > 0 &&
+                      item.pagemap?.cse_image[0]?.src
+                    }
+                    alt="image"
+                  />
+                )}
+
+                {item.displayLink}
+              </a>
+
+              <a className="searchPage__results-result-title" href={item.link}>
+                <h2>{item.title}</h2>
+              </a>
+
+              <p className="searchPage__results-result-snippet">
+                {item.snippet}
+              </p>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

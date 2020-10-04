@@ -1,3 +1,7 @@
+.item-icon {
+  align-self: center;
+}
+
 .searchPage {
   &__header {
     display: flex;
@@ -6,14 +10,20 @@
     background-color: white;
     z-index: 100;
     align-items: flex-start;
-    padding: 3rem;
+    padding: 1.2rem 0 0 1.2rem;
     border-bottom: 0.1rem solid lightgray;
+
+    & a {
+      height: 5rem;
+      display: flex;
+      align-items: center;
+    }
   }
 
   &__logo {
     object-fit: contain;
-    height: 5rem;
-    margin-right: 5rem;
+    height: 3.8rem;
+    margin-right: 3.8rem;
   }
 
   &__body {
@@ -26,11 +36,11 @@
   }
 
   &__options {
-    margin-top: 2rem;
+    margin: 2rem 0 1rem 0;
     display: flex;
     align-items: center;
     color: gray;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 
     &-right {
       margin-left: 8rem;
@@ -42,14 +52,62 @@
 
       &-option {
         display: flex;
-        align-items: center;
         margin-right: 2rem;
 
         & a {
+          height: 2rem;
           text-decoration: none;
           color: gray;
           margin-left: 0.5rem;
         }
+      }
+    }
+  }
+
+  &__results {
+    max-width: 65rem;
+    margin: 2rem 0 10rem 18rem;
+
+    &-count {
+      color: #707577;
+      font-size: 1.6rem;
+    }
+
+    &-result {
+      margin: 4rem 0;
+      font-size: 1.4rem;
+
+      & a {
+        text-decoration: none;
+        color: #202124;
+      }
+
+      &-image {
+        object-fit: cover;
+        height: 2rem;
+        width: 2rem;
+        margin-right: 1rem;
+        border-radius: 1rem;
+      }
+
+      &-title {
+        text-decoration: none;
+        color: #0000ee !important;
+
+        &:hover {
+          text-decoration: underline;
+        }
+
+        & h2 {
+          margin: 0.8rem 0;
+          font-size: 2.2rem;
+          font-weight: 500;
+        }
+      }
+
+      &-snippet {
+        font-size: 1.4rem;
+        margin-top: 1rem;
       }
     }
   }

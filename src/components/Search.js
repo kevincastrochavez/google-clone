@@ -29,7 +29,7 @@ function Search({ hideButtons = false }) {
           value={input}
           onChange={(event) => setInput(event.target.value)}
         />
-        <MicIcon />
+        <MicIcon className="search__inputIcon" />
       </div>
 
       {!hideButtons ? (
@@ -37,7 +37,7 @@ function Search({ hideButtons = false }) {
           <Button type="submit" onClick={search} variant="outlined">
             Search for Something
           </Button>
-          <Button variant="outlined">Look</Button>
+          <Button variant="outlined">I Feel Lucky</Button>
         </div>
       ) : (
         <div className="search__buttonsHidden">
