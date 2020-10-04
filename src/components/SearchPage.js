@@ -93,7 +93,7 @@ function SearchPage() {
                       item.pagemap?.cse_image?.length > 0 &&
                       item.pagemap?.cse_image[0]?.src
                     }
-                    alt="image"
+                    alt="Custom website image"
                   />
                 )}
 
