@@ -9,6 +9,17 @@
     align-items: center;
     padding: 2rem 3rem;
 
+    &-right {
+      display: flex;
+      align-items: center;
+      min-width: 13vw;
+      justify-content: space-between;
+
+      & > .MuiSvgIcon-root {
+        margin-right: 2rem;
+      }
+    }
+
     & a {
       margin-right: 2rem;
       text-decoration: inherit;
@@ -18,17 +29,6 @@
       &:hover {
         text-decoration: underline;
       }
-    }
-  }
-
-  &__headerRight {
-    display: flex;
-    align-items: center;
-    min-width: 13vw;
-    justify-content: space-between;
-
-    & > .MuiSvgIcon-root {
-      margin-right: 2rem;
     }
   }
 

@@ -1,0 +1,66 @@
+@media screen and (max-width: 60rem) {
+  .home {
+    width: 36rem;
+
+    &__header {
+      padding: 1rem !important;
+      font-size: 0.5rem !important;
+
+      &-left a,
+      &-right a {
+        font-size: 1.4rem !important;
+      }
+    }
+  }
+
+  .searchPage {
+    &__logo {
+      margin: 0 !important;
+    }
+
+    &__header {
+      padding: 0 !important;
+      display: flex;
+      align-items: center !important;
+      flex-direction: column !important;
+
+      & a {
+        margin-bottom: 1rem;
+      }
+    }
+
+    &__body {
+      width: 34rem;
+    }
+
+    &__options {
+      &-left {
+        transform: translateX(1.5rem);
+
+        &-option {
+          &:nth-child(5),
+          &:nth-child(6) {
+            display: none;
+          }
+
+          & a {
+            margin-bottom: 0;
+          }
+        }
+      }
+
+      &-right {
+        display: none !important;
+      }
+    }
+
+    &__results {
+      margin: 0 !important;
+      padding: 2rem;
+
+      &-count {
+        margin-top: 0;
+      }
+    }
+  }
+}
